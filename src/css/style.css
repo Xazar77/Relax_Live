@@ -434,7 +434,7 @@ template, [hidden] {
     flex-direction: column;
     -webkit-box-align: end;
     -ms-flex-align: end;
-    align-items: flex-end;
+    align-items: flex-start;
     width: 164px;
     margin-left: 7px;
 }
@@ -459,7 +459,8 @@ template, [hidden] {
     align-items: flex-start;
     width: 165px;
     height: 30px;
-    overflow: hidden;
+    /* overflow: hidden; */
+    
 }
 
 .header-contacts__phone-number-accord {
@@ -478,11 +479,20 @@ template, [hidden] {
     -webkit-transition: 0.5s;
     transition: 0.5s;
 }
+.header-contacts__phone-number-accord.active {
+    top: 25px;
+}
+
 
 .header-contacts__phone-number-accord a {
     -webkit-transition: 0.5s;
     transition: 0.5s;
     opacity: 0;
+    
+}
+.header-contacts__phone-number-accord a.active {
+    opacity: 1;
+    
 }
 
 .header-contacts__arrow {
@@ -4802,6 +4812,10 @@ div.wave-block:nth-child(17):after {
     -webkit-transition: 1s;
     transition: 1s;
 }
+.popup-dialog-menu.popup-dialog-menu-active {
+    transform: translate3d(0, 0, 0);
+    transition: 1s;
+}
 
 @media (max-width: 1024px) {
     .popup-dialog-menu {
@@ -6666,6 +6680,7 @@ div.wave-block:nth-child(17):after {
 .menu {
     right: 10px;
     margin-right: 40px;
+    cursor: pointer;
 }
 
 @media (max-width: 575px) {

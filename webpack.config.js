@@ -40,10 +40,14 @@ module.exports = {
                 test: /\.html$/i,
                 loader: "html-loader",
             },
+            // {
+            //     test: /\.css$/i,
+            //     use: [MiniCssExtractPlugin.loader, "css-loader"]
+            // },
             {
-                test: /\.(c|sa|sc)ss$/i,
+                test: /\.css$/i,
                 use: [
-                    devMode ? "style-loader" : MiniCssExtractPlugin.loader,
+                    MiniCssExtractPlugin.loader,
                     "css-loader",
                     {
                         loader: 'postcss-loader',
@@ -53,7 +57,7 @@ module.exports = {
                             } // Установили для префиксоф
                         }
                     },
-                    "sass-loader"
+                   
                 ],
             },
             {
@@ -87,6 +91,9 @@ module.exports = {
                             // the webp option will enable WEBP
                             webp: {
                               quality: 75
+                            },
+                            svgo : {
+                                enabled: false,
                             }
                           }
                     }
